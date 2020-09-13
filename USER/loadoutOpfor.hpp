@@ -1,7 +1,7 @@
 class loadouts_opfor {
     class AllUnits {
         primaryWeapon = "rhs_weap_ak74mr";
-        primaryWeaponMagazine = "hlc_30Rnd_545x39_EP_ak_Black";
+        primaryWeaponMagazine = "rhs_45Rnd_545X39_AK_Green";
         primaryWeaponMuzzle = "";
         primaryWeaponOptics = "";
         primaryWeaponPointer = "acc_flashlight";
@@ -38,7 +38,7 @@ class loadouts_opfor {
         //rifleman
         class Soldier_F {
             addItemsToVest[] = {
-                LIST_6("hlc_30Rnd_545x39_EP_ak_Black"),
+                LIST_6("rhs_45Rnd_545X39_AK_Green"),
                 "rhs_mag_f1"
             };
         };
