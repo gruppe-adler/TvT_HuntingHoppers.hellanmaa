@@ -23,7 +23,7 @@ private _playerSide = [player, true] call BIS_fnc_objectSide; // JIP/init proof 
     };
 
     //check max respawn time
-    if ((time - _timeOfDeath) > GVAR(MAXRESPAWNTIME)) then {
+    if ((time - _timeOfDeath) > GVAR(MAXRESPAWNTIME) && !(GVAR(WAVERESPAWNMANUAL))) then {
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_isFreeRespawn", true];
         player setVariable ["wr_waveCountdownDone", true];
