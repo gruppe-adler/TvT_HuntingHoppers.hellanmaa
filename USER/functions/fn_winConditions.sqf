@@ -7,6 +7,9 @@
   // east eliminated
   OPFOR_ELIMINATED = !alive _opforBoss;
   BLUFOR_ELIMINATED = ({side _x isEqualTo west && alive _x} count (playableUnits + switchableUnits) == 0);
+  // NO_BOMBSPOTS = (HOPPERS_BOMBS_MIN_PLACED - (missionNamespace getVariable ["hoppers_missionPhase", 0])) > (count HOPPERS_BOMBS_BOMBSPOTS);
+
+  // diag_log format ["min_placed %1, missionphase %2, bombspots %3 - %4", HOPPERS_BOMBS_MIN_PLACED, hoppers_missionPhase, count HOPPERS_BOMBS_BOMBSPOTS, NO_BOMBSPOTS];
 
   OPFOR_EXTRACTED = false;
   {

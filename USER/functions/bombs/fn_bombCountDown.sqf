@@ -43,12 +43,15 @@ for "_i" from (HOPPERS_BOMBS_TIME_TO_EXPLOSION) to 1 step -1 do {
       private _bombActive = _bomb getVariable ["hoppers_countdownStarted", false];
 
       if (_bombActive) then {
-        private _string = "Bomb can be detonated in " + str _i + " s";
-        [_string] remoteExec ["hintSilent", east];
-      };
+          missionNamespace setVariable ["hoppers_countdown", _i, true];
+      } else {
+          missionNamespace setVariable ["hoppers_countdown", -1, true];
+      };  
 
     }, [HOPPERS_BOMBS_TIME_TO_EXPLOSION - _i, _bomb], _i] call CBA_fnc_waitAndExecute;
 };
+
+[] remoteExecCall ["hoppers_fnc_bombShowCountdown", 0];
 
 [{
     params ["_bomb"];

@@ -40,8 +40,10 @@ class hoppers
             class addBombTrigger;
             class bombCountDown;
             class bombDefuse;
+            class bombDefusedHint;
             class bombDetonate;
             class bombDetonateAction;
+            class bombShowCountdown;
             class bombTaskDefuse;
             class bombTaskSetState;
             class canLayBomb;

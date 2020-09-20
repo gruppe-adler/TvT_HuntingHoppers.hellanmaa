@@ -40,7 +40,12 @@ private _timeLeftStr = [_waveTimeLeft, "MM:SS"] call BIS_fnc_secondsToString;
 private _playersLeft = call (player getVariable "wr_playersLeft");
 private _waveSize = call (player getVariable "wr_waveSize");
 private _waveLeftStr = if (GVAR(WAVERESPAWNMANUAL)) then {
-    parseText format ["<t align='center' size='1.4'>---</t>"];
+    private _countDown = missionNamespace getVariable ["hoppers_countdown", -1];
+    if (_countDown > 0) then {
+        parseText format ["<t align='center' size='1.4'>Bomb planted, can be detonated in %1 s</t>", _countDown];
+    } else {
+        parseText format ["<t align='center' size='1.4'>---</t>"];
+    };
 } else {
     parseText format ["<t align='center' size='1.4'>Wave: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft > 0) then {'#ffff00'} else {'#00ff00'},if (_waveTimeLeft > 0) then {'#ffff00'} else {'#00ff00'}, _timeLeftStr];
 };

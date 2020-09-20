@@ -23,6 +23,7 @@ remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];
 
 _boss setVariable ["hoppers_countdownStarted", false, true];
 _bomb setVariable ["hoppers_countdownStarted", false, true];
+missionNamespace setVariable ["hoppers_countdown", -1, true];
 
 // create ruins
 private _housesNearBy = ((_position nearObjects ["House", 50]) + (_position nearObjects ["BUILDING", 50]));
